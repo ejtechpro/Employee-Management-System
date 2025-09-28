@@ -20,7 +20,7 @@ Use the following credentials to log in for testing:
 
 Admin:
 
-email: admin
+email: admin@gmail.com
 
 Password: 1234
 
