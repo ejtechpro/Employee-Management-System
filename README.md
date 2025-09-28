@@ -29,3 +29,8 @@ Employee:
 email: employee1@gmail.com
 
 Password: 1234
+
+LOGIN PAGE
+![image alt](https://github.com/ejtechpro/Employee-Management-System/blob/10df73fc3e53e3d047604fef579cd47f10dd9ebf/img/login_page.png)
+
+
