@@ -1,0 +1,774 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'poppins',sans-serif;
+  background: #e6e6fa;
+}
+
+/* 
+|-----------------------------------------------------------
+|Error & success messages handling
+|-----------------------------------------------------------
+ */
+small.error {
+  color: lavender;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  border-bottom: 1px solid #fff;
+  word-break: keep-all;
+  white-space: nowrap;
+  position: absolute;
+  top: 15%;
+  right: 3%;
+  background: brown;
+  margin-bottom: 10px;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.5s;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+  line-height: 1.5rem;
+  }
+
+  small.success{
+  color: limegreen;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+  word-break: keep-all;
+  white-space: nowrap;
+  position: absolute;
+  top: 15%;
+  right: 3%;
+  background: #fff;
+  margin-bottom: 10px;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.5s;
+  box-shadow: 0 5px 30px rgba(0,0,0,.50);
+}
+
+/* 
+|--------------------------------------
+|Top navigation
+|--------------------------------------
+*/
+nav.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: teal;
+  padding: 10px;
+  z-index: 1;
+}
+
+.navbar .float-left{
+display: flex;
+gap: 1rem;
+white-space: nowrap;
+}
+
+.navbar .float-left a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar .float-left .side-toggler{
+color: #fff;
+font-weight: 600;
+padding: 2px 6px;
+border: 1px solid #ddd;
+cursor: pointer;
+border-radius: 4px;
+
+}
+
+nav .title{
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+nav .user-profile img{
+width: 32px;
+height: 32px;
+border-radius: 50%;
+background: #fff;
+margin-right: 10px;
+}
+
+/* 
+|--------------------------------------
+|Login Container
+|--------------------------------------
+*/
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container form{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 360px;
+  background: #fff;
+}
+
+.container form h4{
+  text-align: center;
+}
+
+.container form label{
+  padding: 10px 1px;
+}
+
+.container form input{
+  border: 1px solid #ddd;
+  outline: none;
+  padding: 8px  4px;
+  border-radius: 4px;
+}
+.container form input[type="checkbox"]{
+  cursor: pointer;
+}
+.container form .radio-group{
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-top: 1rem;
+}
+.container form .radio-group span{
+display: flex;
+align-items: center;
+gap: 1px;
+}
+
+.container form button{
+  padding: 8px 4px;
+  background: teal;
+  color: #fff;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 
+|----------------------------------------------------
+|Admin Dashboard 
+|-----------------------------------------------------
+*/
+.sidebar{
+  padding-top: 5%;
+  background: teal;
+  width: 180px;
+  height: 100vh;
+  float: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.sidebar.active{
+  display: none;
+}
+
+.sidebar li{
+  list-style: none;
+  padding: 6px 10px;
+}
+
+.sidebar li a{
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 786px){
+  .sidebar{
+    padding-top: 17%;
+    display: none;
+  }
+  .sidebar.active{
+    display: block;
+  }
+}
+
+.main-view-panel{
+  max-width: 100%;
+  margin-left: 15%;
+  margin-top: 5%;
+  margin-right: 2%;
+}
+.main-view-panel.active{
+  max-width: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+@media (max-width: 786px){
+  .main-view-panel{
+    margin-left: 1%;
+    margin-top: 15%;
+    margin-right: 1%;
+  }
+
+  .main-view-panel.active{
+    max-width: 100%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+}
+
+.main-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  flex-wrap: wrap;
+  min-height: 60vh;
+
+}
+
+.main-page .empinfo{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: #ddd;
+min-width: 280px;
+padding: 12px;
+border-radius: 4px;
+}
+
+.main-page .empinfo h4, p{
+  padding: 4px;
+  color: teal;
+}
+
+/* Add department */
+.manage-departmens{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  background: #fff;
+  padding: 10px;
+
+}
+
+.manage-departmens .departmentadd{
+  min-width: 40%;
+  padding: 10px;
+}
+
+
+.manage-departmens .departmentview{
+  min-width: 40%;
+  padding: 10px;
+  overflow-x: auto;
+}
+.manage-departmens .viewtable{
+  min-width: 40%;
+  padding: 10px;
+}
+
+@media (max-width: 786px){
+  .manage-departmens .departmentadd{
+    min-width: 100%;
+    padding: 10px;
+  }
+  .manage-departmens .departmentview{
+    min-width: 100%;
+  }
+
+}
+.manage-departmens .departmentadd form{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 10px;
+  margin-top: 2%;
+  min-height: 20vh;
+}
+.manage-departmens .departmentadd form input{
+  padding: 8px 4px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 4px;
+}
+
+.manage-departmens .departmentadd button{
+  padding: 8px;
+  background: teal;
+  color: #fff;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 25%;
+}
+.manage-departmens .departmentview{
+  width: 50%;
+  padding: 10px;
+  min-height: 20vh;
+}
+.manage-departmens .departmentview table{
+  width: 100%;
+  padding: 10px;
+  margin-top: 2%;
+}
+
+/* Add new Employee */
+.addemp{
+  background: #fff;
+  padding: 8px;
+}
+
+fieldset{
+margin-top: 2%;
+border: 1px solid #ddd;
+}
+
+ fieldset legend{
+  font-weight: 600;
+}
+
+fieldset .formfields{
+max-width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+flex-wrap: wrap;
+padding: 10px;
+}
+
+fieldset .formfields .field{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 280px;
+  padding: 4px;
+}
+
+fieldset .formfields .field input, 
+fieldset .formfields .field select{
+  padding: 8px 4px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 4px;
+}
+
+fieldset .formfields .field .gender{
+  display: flex;
+  gap: 1rem;
+}
+
+.addempbtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  gap: 1rem;
+}
+
+.addempbtn button{
+  padding: 8px;
+  background: teal;
+  color: #fff;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 25%;
+}
+
+
+.viewemp{
+  background: #fff;
+  padding: 8px;
+}
+
+.viewemp .empinfomation,
+.addemp .empinfomation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.viewemp .empinfomation a,
+.addemp .empinfomation a {
+  color: teal;
+  text-decoration: none;
+  border: 1px solid teal;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.viewemp table{
+  width: 100%;
+}
+
+
+.viewemp .searchemp{
+display: flex;
+justify-content: flex-start;
+align-items: center;
+padding: 10px;
+gap: 1rem;
+}
+
+.viewemp .searchemp input{
+  padding: 8px 4px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 4px;
+  width: 50%;
+}
+
+.viewemp .viewtable{
+width: 100%;
+overflow-x: auto;
+min-height: 60vh;
+}
+.viewemp .viewtable h4{
+text-align: center;
+color: teal;
+font-size: 18px;
+font-weight: 7000;
+letter-spacing: 1px;
+}
+
+.viewemp .viewtable::-webkit-scrollbar{
+  width: 4px;
+}
+
+.viewemp .viewtable::-webkit-scrollbar-track{
+  background: #eee;
+}
+.viewemp .viewtable::-webkit-scrollbar-thumb{
+ background: #ddd;
+ height: 2px;
+ padding: 2px;
+}
+
+.viewtable th{
+white-space: nowrap;
+ font-size: 14px;
+ background: #ddd;
+ padding: 8px 1px;
+ text-align: justify;
+}
+
+.viewtable td{
+  padding: 8px;
+  white-space: nowrap;
+  border: 1px solid #ddd;
+}
+
+.viewtable input[type="radio"]{
+  cursor: pointer;
+}
+.edit_btn a{
+color: blue;
+padding: 2px 4px;
+border-radius: 5px;
+text-decoration: none;
+}
+
+.delete_btn a.delete{
+color: brown;
+padding: 2px 4px;
+border-radius: 5px;
+text-decoration: none;
+}
+
+/* profile section */
+.profile{
+display: flex;
+justify-content: center;
+align-items: baseline;
+background: #fff;
+padding: 3px;
+}
+ .profile .content{
+width: 100%;
+max-width: 400px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+margin: 3%;
+background: lavender;
+padding: 8px 4px;
+border-radius: 1px 25px 1px 25px;
+}
+.profile .content img{
+  width: 150px;
+  height: 150px;
+  background: #fff;
+  border-radius: 4px;
+}
+.profile .content form label p{
+cursor: pointer;
+font-weight: 700;
+font-size: 14px;
+margin-bottom: 1rem;
+text-align: center;
+text-decoration: underline;
+}
+.profile .content h4{
+color: #333;
+font-size: 18px;
+font-weight: 700;
+text-transform: capitalize;
+text-align: center;
+}
+.profile .content .action_btn{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+}
+.profile .content .action_btn button{
+  padding: 4px 8px;
+  outline: none;
+  border: none;
+  font-weight: 6000;
+  cursor: pointer;
+}
+.profile .content .action_btn a{
+  padding: 3px 4px;
+  text-decoration: none;
+  font-weight: 6000;
+}
+.profile .content .action_btn button.edit{
+  color: #fff;
+  background: teal;
+}
+.profile .content .action_btn a.delete{
+color: #fff;
+background: brown;
+}
+
+/* leave section */
+.manage-leaves{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: start;
+  background: #fff;
+  padding: 10px;
+
+}
+
+.manage-leaves .leavetadd{
+  min-width: 40%;
+  padding: 10px;
+}
+
+
+.manage-leaves .leaveview{
+  min-width: 40%;
+  padding: 10px;
+  overflow-x: auto;
+}
+.manage-leaves .viewtable{
+  min-width: 40%;
+  padding: 10px;
+}
+
+@media (max-width: 786px){
+  .manage-leaves .leavetadd{
+    min-width: 100%;
+    padding: 10px;
+  }
+  .manage-leaves .leaveview{
+    min-width: 100%;
+  }
+
+}
+.manage-leaves .leavetadd form{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 10px;
+  margin-top: 2%;
+  min-height: 20vh;
+}
+.manage-leaves .leavetadd form input,
+.manage-leaves .leavetadd form select,
+.manage-leaves .leavetadd form textarea{
+  padding: 8px 4px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.manage-leaves .leavetadd button{
+  padding: 8px;
+  background: teal;
+  color: #fff;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 25%;
+}
+.manage-leaves .leaveview{
+  width: 50%;
+  padding: 10px;
+  min-height: 20vh;
+}
+.manage-leaves .leaveview table{
+  width: 100%;
+  padding: 10px;
+  margin-top: 2%;
+}
+.manage-leaves .leaveview span.approved{
+  color: green;
+  font-weight: 700;
+}
+.manage-leaves .leaveview span.pending{
+  color: orange;
+  font-weight: 700;
+}
+.manage-leaves .leaveview span.rejected{
+  color: brown;
+  font-weight: 700;
+}
+.manage-leaves .leaveview td form select{
+  width: 100%;
+  padding: 3px;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  outline: none;
+}
+.manage-leaves .leaveview td form .approve-btn{
+  margin: 1rem;
+  text-align: center;
+}
+.manage-leaves .leaveview td form .approve-btn button{
+  outline: none;
+  border: none;
+  background: teal;
+  color: #fff;
+  cursor: pointer;
+  padding: 3px 6px;
+}
+/* 
+|-----------------------------------------------------------------
+|Employee Dashboard 
+|-----------------------------------------------------------------
+*/
+.emp-home-section{
+  background: #fff;
+  padding: 4px;
+}
+.emp-home-section .details{
+padding: 4px;
+}
+
+.emp-home-section .details h4{
+  color: teal;
+}
+
+.emp-home-section .details .my-info{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.emp-home-section .details .my-info fieldset{
+  flex-basis:  42%;
+  padding: 4px;
+}
+
+.emp-home-section .details .my-info fieldset h3{
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 0;
+  text-transform: capitalize;
+}
+.emp-home-section .details .my-info fieldset h3 span{
+  color: #777;
+  font-size: 14px;
+  font-weight: 500;
+}
+.emp-home-section .details .my-info .edit-btn{
+  margin: 1rem auto;
+  text-align: center;
+}
+.emp-home-section .details .my-info fieldset a.edit{
+  background: teal;
+  color: #fff;
+  padding: 6px 30px;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+.emp-home-section .details .my-info fieldset .salary{
+  width: auto;
+  margin: 1rem auto;
+}
+.emp-home-section .details .my-info fieldset .salary input{
+  padding: 4px;
+  width: 100%;
+  text-align: center;
+  color: teal;
+  font-weight: 800;
+
+}
+
+/*
+|-------------------------------------------------------------------
+|Footer Part 
+|-------------------------------------------------------------------
+*/
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 10px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.footer span{
+  color: teal;
+  font-weight: 600;
+  font-style: italic;
+}
